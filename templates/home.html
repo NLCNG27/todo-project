@@ -1,0 +1,11 @@
+<!-- templates/home.html -->
+
+<h1>Todo App</h1>
+
+<h2><a href="{% url 'todo_new' %}">+ Add New</a></h2>
+
+<ul>
+    {% for item in object_list %}
+        <span><li>{{ item.text }} -- <a href="{% url 'todo_delete' item.pk %}">Done</a></li></span>
+    {% endfor %}
+</ul>
